@@ -34,7 +34,7 @@ export default function About() {
         <Reveal className="about-copy" delay={120}>
           <span className="eyebrow">FULL STACK. FULL PICTURE.</span>
           <p className="lead">
-            I’m a Full Stack Developer with 5 years of hands-on experience
+            I’m a Full Stack Developer with 6 years of hands-on experience
             building scalable web applications.
           </p>
           <p>

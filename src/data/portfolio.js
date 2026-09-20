@@ -223,7 +223,7 @@ export const skillGroups = [
 ];
 
 export const stats = [
-  { value: "5", label: "Years Experience", color: "#60a5fa" },
+  { value: "6", label: "Years Experience", color: "#60a5fa" },
   { value: "15+", label: "Projects Delivered", color: "#34d399" },
   { value: "2", label: "Companies Led", color: "#fbbf24" },
   { value: "Full", label: "Stack Coverage", color: "#f472b6" },
