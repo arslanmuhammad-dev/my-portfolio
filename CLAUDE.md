@@ -1,35 +1,28 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# Portfolio development
 
 ## Commands
 
-- `npm start` — run dev server (CRA, http://localhost:3000)
-- `npm run build` — production build to `build/`
-- `npm test` — Jest in watch mode (`npm test -- --watchAll=false` for single run, `npm test -- <pattern>` for one file). No test files currently exist.
+- `npm start` — Create React App development server.
+- `npm run build` — production assets in `build/`.
+- `CI=true npm test -- --watchAll=false` — contact form regression tests.
+- `npx eslint src --max-warnings=0` — lint all source files.
 
-The directory name contains an `=` sign (`my=portfolio`); always quote paths in shell commands.
+The directory name contains an `=` sign; quote absolute paths in shell commands.
 
 ## Architecture
 
-Single-page React 18 portfolio site built with Create React App (`react-scripts`) and Material-UI v6. Despite `react-router-dom` being a dependency, **no router is used** — the entire site is one scroll page with anchor navigation.
+React 18 and Create React App, with the existing MUI ThemeProvider. This is a single anchor-navigation page; the installed react-router-dom dependency is not used. Preserve section anchors and existing control IDs.
 
-- `src/index.js` mounts `<App />` into `#root` with StrictMode.
-- `src/App.js` defines the **single MUI theme** (dark, blue→emerald gradient palette `#3b82f6`/`#10b981` on slate `#0b0f1a`, with `#fbbf24` amber accent; "Space Grotesk" + "Inter" + "JetBrains Mono" fonts) inline via `createTheme`, including `MuiButton`/`MuiCard`/`MuiChip` style overrides. All sections render in fixed order under one `<ThemeProvider>`: `Header → Hero → About → Experience → Projects → Contact → Footer`.
-- Each section component in `src/components/` owns its own `<Box id="...">` wrapper (`#about`, `#experience`, `#projects`, `#contact`). `Header.js` uses these anchors via `document.querySelector(href).scrollIntoView`. When adding a new section, add the `id` on its outer `Box` and a corresponding entry to `navLinks` in `Header.js`.
-- Styling is **MUI `sx` prop only** — no CSS-in-JS libraries, no styled-components, no Tailwind. Global styles (scrollbar, selection, smooth scroll) and shared keyframes (`fadeInUp`, `fadeIn`, `shimmer`, `float`) live in `src/index.css`. Match the existing gradient/glass-morphism patterns (`backdropFilter: 'blur(...)'`, `rgba(59, 130, 246, ...)` for primary blue, `rgba(16, 185, 129, ...)` for emerald accent) when adding UI.
-- Interactive elements have stable `id` attributes following the convention `<section>-<purpose>` (e.g., `contact-submit`, `nav-about`, `mobile-nav-hire-me`). Preserve these IDs when editing — they appear used as selector hooks.
+`App.js` composes Header, Hero, About, Projects, Experience, Contact, and Footer. Shared reveal, arrow, navigation, and social components live in `components/Shared.js`. Personal project, experience, skills, and statistics data are centralized in `data/portfolio.js`; do not invent or silently change this information.
 
-## Contact form (EmailJS)
+Global design tokens, responsive section styles, and animation definitions live in `index.css`. The design uses deep plum surfaces, cream text, a peach accent, Inter, and Fraunces. Original CSS geometry provides decorative imagery. `src/assets/avatar.png` is the existing personal portrait.
 
-`Contact.js` posts via `@emailjs/browser` using three env vars that **must be prefixed `REACT_APP_`** to be exposed by CRA:
+Motion uses CSS transforms and IntersectionObserver, without an animation dependency. Respect reduced-motion preferences. Reveals are progressive enhancements. Hero animation pauses outside the viewport. The native modal dialog provides focus containment and Escape dismissal. Desktop projects use native horizontal scroll snapping, filters, arrow controls, and keyboard navigation; mobile projects form a vertical list.
 
-- `REACT_APP_EMAILJS_SERVICE_ID`
-- `REACT_APP_EMAILJS_TEMPLATE_ID`
-- `REACT_APP_EMAILJS_PUBLIC_KEY`
+## Contact
 
-These are read at build time from `.env` (gitignored). The form ref is passed to `emailjs.sendForm`, so EmailJS template variables map to the `name` attributes on the `<TextField>`s (`name`, `email`, `subject`, `message`) — renaming any of those will silently break the email template binding.
+EmailJS uses build-time `REACT_APP_EMAILJS_SERVICE_ID`, `REACT_APP_EMAILJS_TEMPLATE_ID`, and `REACT_APP_EMAILJS_PUBLIC_KEY`. Preserve the form field names `name`, `email`, `subject`, and `message`, which bind to the EmailJS template. Do not commit `.env` values. Tests mock EmailJS; do not send unsolicited test emails.
 
 ## Deployment
 
-Vercel (`.vercel/` present). Production build is whatever `npm run build` produces; ensure the three `REACT_APP_EMAILJS_*` vars are set in the Vercel project, not just `.env`.
+Existing Vercel project: `muhammad-arslan-portfolio`. Existing repository: `sheikh622/my-portfolio`, branch `main`. Keep `.vercel/`, `.env`, and generated `build/` gitignored. No hosting configuration changes are needed for this redesign.
