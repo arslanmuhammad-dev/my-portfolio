@@ -7,13 +7,17 @@ export default function Header() {
   const toggle = useRef(null);
   const progress = useRef(null);
   useEffect(() => {
+    if (typeof window === "undefined" || typeof document === "undefined")
+      return undefined;
     let frame;
     const update = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const total =
           document.documentElement.scrollHeight - window.innerHeight;
-        progress.current.style.transform = `scaleX(${total > 0 ? window.scrollY / total : 0})`;
+        if (progress.current) {
+          progress.current.style.transform = `scaleX(${total > 0 ? window.scrollY / total : 0})`;
+        }
       });
     };
     window.addEventListener("scroll", update, { passive: true });
@@ -24,7 +28,7 @@ export default function Header() {
     };
   }, []);
   useEffect(() => {
-    if (!open) return;
+    if (!open || typeof document === "undefined" || !dialog.current) return;
     dialog.current.showModal();
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";

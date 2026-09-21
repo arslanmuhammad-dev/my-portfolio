@@ -41,6 +41,8 @@ export default function Projects() {
   );
   useEffect(() => {
     const root = track.current;
+    if (!root || typeof window === "undefined" || !("IntersectionObserver" in window))
+      return undefined;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -55,7 +57,7 @@ export default function Projects() {
   }, [category]);
   const select = (index) => {
     const card = cards.current[index];
-    if (!card) return;
+    if (!card || !track.current || typeof window === "undefined") return;
     const reduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -68,7 +70,7 @@ export default function Projects() {
   const filter = (value) => {
     setCategory(value);
     setActive(0);
-    track.current.scrollTo({ left: 0, behavior: "instant" });
+    track.current?.scrollTo({ left: 0, behavior: "instant" });
     cards.current = [];
   };
   return (
