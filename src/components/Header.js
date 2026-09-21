@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
   useEffect(() => {
     if (!open || typeof document === "undefined" || !dialog.current) return;
-    dialog.current.showModal();
+    if (!dialog.current.open) dialog.current.showModal();
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
@@ -37,7 +37,7 @@ export default function Header() {
     };
   }, [open]);
   const close = () => {
-    dialog.current.close();
+    if (dialog.current?.open) dialog.current.close();
     setOpen(false);
     toggle.current?.focus();
   };
@@ -95,6 +95,7 @@ export default function Header() {
         className="menu-dialog"
         aria-label="Site navigation"
         onCancel={close}
+        onClose={() => setOpen(false)}
         onClick={(e) => {
           if (e.target === dialog.current) close();
         }}
@@ -129,7 +130,11 @@ export default function Header() {
             ))}
           </nav>
           <div className="menu-bottom">
-            <a id="mobile-nav-hire-me" href="mailto:arslansaleem622@gmail.com">
+            <a
+              id="mobile-nav-hire-me"
+              href="mailto:arslansaleem622@gmail.com"
+              onClick={close}
+            >
               arslansaleem622@gmail.com
             </a>
             <SocialLinks prefix="menu" />

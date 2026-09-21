@@ -63,14 +63,14 @@ export default function Projects() {
     ).matches;
     track.current.scrollTo({
       left: card.offsetLeft,
-      behavior: reduced ? "instant" : "smooth",
+      behavior: reduced ? "auto" : "smooth",
     });
     setActive(index);
   };
   const filter = (value) => {
     setCategory(value);
     setActive(0);
-    track.current?.scrollTo({ left: 0, behavior: "instant" });
+    track.current?.scrollTo({ left: 0, behavior: "auto" });
     cards.current = [];
   };
   return (

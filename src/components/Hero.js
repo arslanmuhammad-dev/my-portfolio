@@ -3,11 +3,14 @@ import { site } from "../data/site";
 import { Arrow, SocialLinks } from "./Shared";
 
 const canUseDOM = typeof window !== "undefined";
+const isHydrating =
+  canUseDOM && document.getElementById("root")?.hasChildNodes();
 
 export function Intro() {
   const [visible, setVisible] = useState(
     () =>
       canUseDOM &&
+      !isHydrating &&
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
       !window.location.hash,
   );
