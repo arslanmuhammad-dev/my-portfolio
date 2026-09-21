@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Muhammad Arslan, Senior Software Engineer in Lahore">
+  <rect width="1200" height="630" fill="#100c16"/>
+  <circle cx="988" cy="142" r="86" fill="#34d399" opacity="0.9"/>
+  <circle cx="1026" cy="468" r="158" fill="#3b82f6" opacity="0.28"/>
+  <path d="M120 476h450" stroke="#e9c4ae" stroke-width="8" stroke-linecap="round"/>
+  <text x="120" y="242" fill="#f5f0e6" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="700">Muhammad Arslan</text>
+  <text x="124" y="330" fill="#e9c4ae" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="600">Senior Software Engineer</text>
+  <text x="124" y="398" fill="#b4a9b9" font-family="Inter, Arial, sans-serif" font-size="34">Lahore, Pakistan · React · Next.js · Node.js · AWS</text>
+</svg>

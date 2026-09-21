@@ -3,32 +3,98 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#100c16" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f0e6" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#100c16" />
     <meta
       name="description"
-      content="Muhammad Arslan – Senior Software Engineer & Full Stack Developer with 6 years building production-ready React, Next.js, Node.js, and AWS-deployed web platforms."
+      content="Muhammad Arslan is a Senior Software Engineer in Lahore, building full-stack web apps with React, Next.js, Node.js, and AWS."
     />
-    <meta
-      name="keywords"
-      content="Muhammad Arslan, Senior Software Engineer, Full Stack Developer, React, Next.js, Node.js, Express, MongoDB, PostgreSQL, AWS, Vercel, Docker, Lahore Pakistan, Portfolio"
-    />
-    <meta
-      property="og:title"
-      content="Muhammad Arslan | Senior Software Engineer · Full Stack Developer"
-    />
-    <meta
-      property="og:description"
-      content="Senior Software Engineer building end-to-end full-stack apps with React, Next.js, Node.js, and AWS. 6 years of experience. Open to remote opportunities."
-    />
-    <title>
-      Muhammad Arslan | Senior Software Engineer · Full Stack Developer
-    </title>
+    <meta name="author" content="Muhammad Arslan" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://muhammad-arslan-portfolio.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Muhammad Arslan" />
+    <meta property="og:title" content="Muhammad Arslan — Senior Software Engineer, Lahore" />
+    <meta property="og:description" content="Muhammad Arslan is a Senior Software Engineer in Lahore, building full-stack web apps with React, Next.js, Node.js, and AWS." />
+    <meta property="og:url" content="https://muhammad-arslan-portfolio.vercel.app/" />
+    <meta property="og:image" content="https://muhammad-arslan-portfolio.vercel.app/og-image.svg" />
+    <meta property="og:image:alt" content="Muhammad Arslan, Senior Software Engineer in Lahore" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muhammad Arslan — Senior Software Engineer, Lahore" />
+    <meta name="twitter:description" content="Muhammad Arslan is a Senior Software Engineer in Lahore, building full-stack web apps with React, Next.js, Node.js, and AWS." />
+    <meta name="twitter:image" content="https://muhammad-arslan-portfolio.vercel.app/og-image.svg" />
+    <title>Muhammad Arslan — Senior Engineer, Lahore</title>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://muhammad-arslan-portfolio.vercel.app/#person",
+            "name": "Muhammad Arslan",
+            "alternateName": ["Arslan Muhammad"],
+            "jobTitle": "Senior Software Engineer & Full Stack Developer",
+            "description": "Muhammad Arslan is a Senior Software Engineer in Lahore, building full-stack products with React, Next.js, Node.js, and AWS.",
+            "url": "https://muhammad-arslan-portfolio.vercel.app/",
+            "email": "mailto:arslansaleem622@gmail.com",
+            "image": "https://muhammad-arslan-portfolio.vercel.app/avatar.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lahore",
+              "addressCountry": "PK"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Devflovv"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "The University of Lahore"
+            },
+            "knowsAbout": ["React.js", "Next.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "AWS", "Docker", "REST APIs", "GraphQL", "WebSockets"],
+            "sameAs": ["https://github.com/arslanmuhammad-dev", "https://linkedin.com/in/muhammad-arslan-0624971b5"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://muhammad-arslan-portfolio.vercel.app/#website",
+            "url": "https://muhammad-arslan-portfolio.vercel.app/",
+            "name": "Muhammad Arslan",
+            "author": { "@id": "https://muhammad-arslan-portfolio.vercel.app/#person" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://muhammad-arslan-portfolio.vercel.app/#profile",
+            "url": "https://muhammad-arslan-portfolio.vercel.app/",
+            "mainEntity": { "@id": "https://muhammad-arslan-portfolio.vercel.app/#person" }
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://muhammad-arslan-portfolio.vercel.app/#projects",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "item": { "@type": "CreativeWork", "name": "Lamppost", "description": "A full-stack education management platform with role-based access for principals and teachers.", "url": "https://muhammad-arslan-portfolio.vercel.app/#project-lamppost" } },
+              { "@type": "ListItem", "position": 2, "item": { "@type": "CreativeWork", "name": "Tabshura", "description": "A comprehensive education management system for teachers, students, and parents.", "url": "https://muhammad-arslan-portfolio.vercel.app/#project-tabshura" } },
+              { "@type": "ListItem", "position": 3, "item": { "@type": "CreativeWork", "name": "Living-AI", "description": "A scalable AI-driven full-stack application built with React, TypeScript, and Node.js.", "url": "https://muhammad-arslan-portfolio.vercel.app/#project-living-ai" } },
+              { "@type": "ListItem", "position": 4, "item": { "@type": "CreativeWork", "name": "Total Health Dental Care", "description": "A patient management system featuring online appointment booking and enhanced admin workflows.", "url": "https://muhammad-arslan-portfolio.vercel.app/#project-thdc" } },
+              { "@type": "ListItem", "position": 5, "item": { "@type": "CreativeWork", "name": "Joblinxs", "description": "A freelance marketplace platform enabling interactions between clients and service providers.", "url": "https://muhammad-arslan-portfolio.vercel.app/#project-joblinxs" } },
+              { "@type": "ListItem", "position": 6, "item": { "@type": "CreativeWork", "name": "Personal Project", "description": "A self-built fullstack productivity app with authentication, kanban tasks, and a streaming AI assistant.", "url": "https://my-fullstack.vercel.app" } }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
