@@ -36,6 +36,8 @@ export function Reveal({ children, className = "", delay = 0, ...props }) {
   useEffect(() => {
     const el = ref.current;
     if (
+      typeof window === "undefined" ||
+      !el ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
       !("IntersectionObserver" in window)
     )
@@ -82,7 +84,7 @@ export function SocialLinks({ prefix }) {
           id={`${prefix}-social-${s.label.toLowerCase()}`}
           href={s.href}
           target={s.label === "Email" ? undefined : "_blank"}
-          rel="noopener noreferrer"
+          rel={s.label === "Email" ? undefined : "me noopener noreferrer"}
         >
           {s.label}
           <Arrow />

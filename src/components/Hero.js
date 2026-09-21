@@ -1,9 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
+import { site } from "../data/site";
 import { Arrow, SocialLinks } from "./Shared";
+
+const canUseDOM = typeof window !== "undefined";
 
 export function Intro() {
   const [visible, setVisible] = useState(
     () =>
+      canUseDOM &&
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
       !window.location.hash,
   );
@@ -27,6 +31,7 @@ export default function Hero() {
   const frame = useRef(null);
   useEffect(() => {
     const element = art.current;
+    if (!element || !("IntersectionObserver" in window)) return undefined;
     const observer = new IntersectionObserver(([entry]) => {
       element.classList.toggle("motion-paused", !entry.isIntersecting);
     });
@@ -38,6 +43,7 @@ export default function Hero() {
   }, []);
   const move = (e) => {
     if (
+      !canUseDOM ||
       window.matchMedia("(prefers-reduced-motion: reduce), (pointer: coarse)")
         .matches
     )
@@ -72,10 +78,10 @@ export default function Hero() {
         </div>
         <h1>
           <span className="line-mask">
-            <span>Thoughtfully built.</span>
+            <span>{site.name}</span>
           </span>
           <span className="line-mask">
-            <span className="serif">Engineered to last.</span>
+            <span className="serif"> {site.role}</span>
           </span>
         </h1>
         <div className="hero-description hero-enter">
