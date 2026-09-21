@@ -25,7 +25,11 @@ export default function Experience() {
         <div className="experience-list">
           {experiences.map((exp, i) => (
             <Reveal key={exp.id} delay={i * 70}>
-              <details className="experience-item" id={exp.id} open={i === 0}>
+              <details
+                className="experience-item"
+                id={exp.id}
+                open={exp.type === "work"}
+              >
                 <summary>
                   <div className="experience-meta">
                     <span className="eyebrow">{exp.period}</span>
