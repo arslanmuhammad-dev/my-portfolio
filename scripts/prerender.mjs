@@ -14,7 +14,9 @@ const { renderToString } = require("react-dom/server");
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const buildDir = path.join(root, "build");
 const indexPath = path.join(buildDir, "index.html");
+const manifestPath = path.join(buildDir, "asset-manifest.json");
 const marker = '<div id="root"></div>';
+const assetManifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 
 require.extensions[".css"] = (module) => {
   module.exports = {};
@@ -22,7 +24,12 @@ require.extensions[".css"] = (module) => {
 
 for (const ext of [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"]) {
   require.extensions[ext] = (module, filename) => {
-    module.exports = `/static/media/${path.basename(filename)}`;
+    const manifestKey = `static/media/${path.basename(filename)}`;
+    const builtAsset = assetManifest.files[manifestKey];
+    if (!builtAsset) {
+      throw new Error(`Built asset not found in manifest: ${manifestKey}`);
+    }
+    module.exports = builtAsset;
   };
 }
 
