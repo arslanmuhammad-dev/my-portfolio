@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const buildDir = path.join(root, "build");
-const siteUrl = process.env.SITE_URL || "https://muhammad-arslan-portfolio.vercel.app/";
+const siteUrl = process.env.SITE_URL || "https://muhammad-arslan-portfolio-green.vercel.app/";
 
 let lastmod;
 try {

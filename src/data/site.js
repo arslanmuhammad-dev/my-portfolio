@@ -1,8 +1,8 @@
 export const site = {
   name: "Muhammad Arslan",
   alternateNames: ["Arslan Muhammad"],
-  domain: "muhammad-arslan-portfolio.vercel.app",
-  url: "https://muhammad-arslan-portfolio.vercel.app/",
+  domain: "muhammad-arslan-portfolio-green.vercel.app",
+  url: "https://muhammad-arslan-portfolio-green.vercel.app/",
   title: "Senior Software Engineer",
   role: "Senior Software Engineer & Full Stack Developer",
   city: "Lahore",

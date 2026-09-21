@@ -1,5 +1,5 @@
-# muhammad-arslan-portfolio.vercel.app: personal portfolio. Everything here is meant to be crawled.
+# muhammad-arslan-portfolio-green.vercel.app: personal portfolio. Everything here is meant to be crawled.
 User-agent: *
 Allow: /
 
-Sitemap: https://muhammad-arslan-portfolio.vercel.app/sitemap.xml
+Sitemap: https://muhammad-arslan-portfolio-green.vercel.app/sitemap.xml
