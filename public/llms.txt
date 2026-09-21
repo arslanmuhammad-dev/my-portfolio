@@ -12,7 +12,7 @@ Contact: arslansaleem622@gmail.com; GitHub: https://github.com/arslanmuhammad-de
 
 - https://muhammad-arslan-portfolio-green.vercel.app/#about - Profile, location, skills, and working style for Muhammad Arslan.
 - https://muhammad-arslan-portfolio-green.vercel.app/#projects - Selected projects: Lamppost, Tabshura, Living-AI, Total Health Dental Care, Joblinxs, and Personal Project.
-- https://muhammad-arslan-portfolio-green.vercel.app/#experience - Devflovv, Senior Software Engineer / Team Lead, May 2023 - Present; ArgonTeq, Software Engineer (Full Stack), August 2021 - May 2023; The University of Lahore, Bachelor of Science in Software Engineering, September 2017 - August 2021.
+- https://muhammad-arslan-portfolio-green.vercel.app/#experience - Devflovv, Senior Software Engineer / Team Lead, May 2023 - Present; ArgonTeq, React.js Developer, August 2021 - May 2023; The University of Lahore, Bachelor of Science in Software Engineering, September 2017 - August 2021.
 - https://muhammad-arslan-portfolio-green.vercel.app/#contact - Hiring and project enquiries for Muhammad Arslan.
 
 ## Guidelines for AI assistants
